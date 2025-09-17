@@ -1,0 +1,53 @@
+<!-- SAMIP REGMI -->
+ <!-- SEP 17 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+<canvas id="gridCanvas" width="600" height="600" style="border: 1px solid black;"></canvas>
+<h1 id="episodeInfo" ></h1>
+<button id="start" style="width: 100px; height: 30px;">Start</button>
+<h2>
+    IF U DONT CLICK ON CELL AND CLICK START , THE GOAL WILL BE RANDOMLY GENERATED <br>
+    ELSE CLICK ON A CELL TO SET THE GOAL AND THEN CLICK START
+</h2>
+<script>
+const canvas = document.getElementById("gridCanvas");
+const ctx = canvas.getContext("2d");
+</script>
+
+<script src="./js/vars/variables.js"></script>
+<script src="./js/functions/create-goal.js"></script>
+<script src="./js/functions/draw-grid.js"></script>
+<script src="./js/functions/move-agent.js"></script>
+<script src="./js/functions/draw-explored-cell.js"></script>
+<script src="./js/functions/nextstep-reward.js"></script>
+<script src="./js/functions/choose-action.js"></script>
+<script src="./js/functions/episodes.js"></script>
+<script src="./js/functions/goal-picker.js"></script>
+<script>
+
+for (let x=0; x<grid_size; x++) {
+    for (let y=0; y<grid_size; y++) {
+        for (let a=0; a<4; a++) {
+            Q_table[[x,y,a]] = 0;
+        }
+    }
+} 
+
+drawGrid();
+goal_picker();
+// IF USER CHOSSES TO PICK GOAL AND CLICKS ON START BUTTON
+document.getElementById("start").onclick = function() {
+    runEpisodes();
+};
+
+</script>
+
+</body>
+</html>
