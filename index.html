@@ -6,19 +6,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<canvas id="gridCanvas" width="600" height="600" style="border: 1px solid black;"></canvas>
-<h1 id="episodeInfo" ></h1>
-<button id="start" style="width: 100px; height: 30px;">Start</button>
+<h1>Grid & Path Visualizer</h1>
+<div id="container">
+  <div class="canvas-container">
+    <canvas id="gridCanvas" width="400" height="400"></canvas>
+  </div>
+  <div class="canvas-container">
+    <canvas id="pathCanvas" width="400" height="400"></canvas>
+  </div>
+</div>
+
+<div id="controls">
+  <h1 id="episodeInfo"></h1>
+  <button id="start" style="width: 120px; height: 40px;">Start</button>
 <h2>
     IF U DONT CLICK ON CELL AND CLICK START , THE GOAL WILL BE RANDOMLY GENERATED <br>
     ELSE CLICK ON A CELL TO SET THE GOAL AND THEN CLICK START
 </h2>
+</div>
 <script>
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
+const newcanvas = document.getElementById("pathCanvas");
+const newctx = newcanvas.getContext("2d");
 </script>
 
 <script src="./js/vars/variables.js"></script>

@@ -11,7 +11,7 @@ async function runEpisodes() {
             moveAgent(state[0], state[1]);
             markExplored(state[0], state[1]);
             const distance = Math.abs(state[0]-goal[0]) + Math.abs(state[1]-goal[1]);
-            document.getElementById("episodeInfo").innerText = "Episode: " + (episode + 1) + ", Epsilon: " + epsilon.toFixed(2) + ", Distance to Goal: " + distance;
+            document.getElementById("episodeInfo").innerText = `Episode: ${episode + 1}/${num_episodes}, Epsilon: ${epsilon.toFixed(2)}, Distance to Goal: ${distance}`;
 
 
 

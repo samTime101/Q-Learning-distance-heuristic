@@ -1,0 +1,19 @@
+  h1, h2 {
+    text-align: center;
+  }
+
+  #container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .canvas-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    border: 2px solid black;
+  }
